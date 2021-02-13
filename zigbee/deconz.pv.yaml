@@ -1,0 +1,25 @@
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: deconz-pv
+  namespace: zigbee
+  labels:
+    appName: deconz
+spec:
+  storageClassName: deconz-storage
+  capacity:
+    storage: 10M
+  accessModes:
+    - ReadWriteOnce
+  local:
+    path: /data/deconz
+  persistentVolumeReclaimPolicy: Retain
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values: 
+                - jelly-node

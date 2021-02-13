@@ -1,0 +1,60 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deconz-deployment
+  namespace: zigbee
+  labels:
+    appName: deconz
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: deconz
+  template:
+    metadata:
+      labels:
+        app: deconz
+    spec:
+      containers:
+        - name: deconz
+          image: marthoc/deconz:latest
+          ports:
+            - containerPort: 8124
+          env:
+            - name: DECONZ_WEB_PORT
+              value: "8124"
+            - name: DECONZ_WS_PORT
+              value: "4443"
+            - name: DECONZ_VNC_MODE
+              value: "0"
+            - name: DECONZ_UPNP
+              value: "0"
+            - name: DECONZ_DEVICE
+              value: "/dev/ttyS0"
+            - name: DEBUG_INFO
+              value: "0"
+            - name: DEBUG_APS
+              value: "0"
+            - name: DEBUG_ZCL
+              value: "0"
+            - name: DEBUG_ZDP
+              value: "0"
+            - name: DEBUG_OTAU
+              value: "0"
+            - name: TZ
+              value: "Europe/Amsterdam"
+          securityContext:
+            privileged: true
+          volumeMounts:
+            - name: deconz-vol
+              mountPath: /root/.local/share/dresden-elektronik/deCONZ
+            - name: ttys0
+              mountPath: /dev/ttyS0
+      volumes:
+        - name: deconz-vol
+          persistentVolumeClaim:
+            claimName: deconz-pvc
+        - name: ttys0
+          hostPath:
+            path: /dev/ttyS0
