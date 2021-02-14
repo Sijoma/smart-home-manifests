@@ -14,5 +14,8 @@ spec:
         name: k8s-at-home-charts
         namespace: flux-system
       interval: 1m
+  valuesFrom:
+    - kind: ConfigMap
+      name: home-assistant-values
   values: 
     replicaCount: 1
