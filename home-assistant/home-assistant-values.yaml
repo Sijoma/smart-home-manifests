@@ -4,13 +4,13 @@ ingress:
     nginx.org/websocket-services: home-assistant
     kubernetes.io/ingress.class: nginx
     cert-manager.io/cluster-issuer: letsencrypt-prod
-    hosts:
-    - host: home.simon-zengerling.de
-      http:
-        paths:
-        - path: /
-          pathType: Prefix
-    tls:
-    - secretName: letsencrypt-prod-home-assistant-tls
-    - hosts:
-      - home.simon-zengerling.de
+  hosts:
+  - host: home.simon-zengerling.de
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+  tls:
+  - secretName: letsencrypt-prod-home-assistant-tls
+  - hosts:
+    - home.simon-zengerling.de
