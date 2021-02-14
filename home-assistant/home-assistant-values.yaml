@@ -12,5 +12,4 @@ ingress:
         pathType: Prefix
   tls:
   - secretName: letsencrypt-prod-home-assistant-tls
-  - hosts:
-    - home.simon-zengerling.de
+ 
