@@ -13,3 +13,13 @@ ingress:
     - secretName: letsencrypt-prod-tls-secret
       hosts:
         - home.simon-zengerling.de
+
+prometheus:
+  serviceMonitor:
+    enabled: true
+    additionalLabels: 
+      prometheus: true
+
+persistence:
+  config:
+    enabled: true
