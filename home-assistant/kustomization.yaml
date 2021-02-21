@@ -4,6 +4,7 @@ namespace: home
 resources:
 - helm-source.yaml
 - home-assistant-helm-release.yaml
+- home-assistant-pv.yaml
 configMapGenerator:
   - name: home-assistant-values
     files:
