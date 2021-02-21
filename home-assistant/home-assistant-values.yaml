@@ -18,7 +18,7 @@ prometheus:
   serviceMonitor:
     enabled: true
     additionalLabels: 
-      prometheus: true
+      prometheus: "true"
 
 persistence:
   config:
