@@ -23,3 +23,6 @@ prometheus:
 persistence:
   config:
     enabled: true
+    storageClass: "local-storage"
+    accessMode: ReadWriteOnce
+    size: 1Gi
