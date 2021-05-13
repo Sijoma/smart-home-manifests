@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: deconz
-          image: marthoc/deconz:latest
+          image: marthoc/deconz:2.11.03
           ports:
             - containerPort: 8124
           env:
