@@ -14,12 +14,6 @@ ingress:
       hosts:
         - home.simon-zengerling.de
 
-prometheus:
-  serviceMonitor:
-    enabled: true
-    additionalLabels: 
-      prometheus: "true"
-
 persistence:
   config:
     enabled: true
