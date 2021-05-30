@@ -5,6 +5,7 @@ resources:
 - helm-source.yaml
 - home-assistant-helm-release.yaml
 - home-assistant-pv.yaml
+- home-svc-monitor.yaml
 configMapGenerator:
   - name: home-assistant-values
     files:
