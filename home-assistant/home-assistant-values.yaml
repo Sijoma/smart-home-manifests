@@ -1,4 +1,10 @@
 ---
+controller:
+  enabled: true
+  type: deployment
+  annotations:
+    linkerd.io/inject: enable
+    
 ingress:
   enabled: true
   annotations:
