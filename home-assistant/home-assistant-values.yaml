@@ -1,7 +1,6 @@
 ---
-controller:
-  annotations: 
-    linkerd.io/inject: enabled
+annotations: 
+  linkerd.io/inject: enabled
 
 ingress:
   enabled: true
