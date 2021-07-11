@@ -1,6 +1,6 @@
 ---
 podAnnotations: 
-    linkerd.io/inject: enable
+    linkerd.io/inject: enabled
 
 ingress:
   enabled: true
