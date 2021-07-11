@@ -1,10 +1,7 @@
 ---
-controller:
-  enabled: true
-  type: deployment
-  annotations:
+podAnnotations: 
     linkerd.io/inject: enable
-    
+
 ingress:
   enabled: true
   annotations:
